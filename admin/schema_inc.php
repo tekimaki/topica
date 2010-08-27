@@ -1,4 +1,17 @@
 <?php
+
+global $gBitSystem;
+
+$gBitSystem->registerPackageInfo( TOPICA_PKG_NAME, array(
+	'description' => "A simple Liberty Service used to relay user registration date to Topica.com list manager.",
+	'license' => '<a href="http://www.gnu.org/licenses/licenses.html#LGPL">LGPL</a>',
+) );
+
+
+// Install process
+global $gBitInstaller;
+if( is_object( $gBitInstaller ) ){
+
 $tables = array(
   'topica' => "
     content_id I4 NOTNULL,
@@ -15,14 +28,8 @@ $tables = array(
   "
 );
 
-global $gBitInstaller;
-
 foreach( array_keys( $tables ) AS $tableName ) {
 	$gBitInstaller->registerSchemaTable( TOPICA_PKG_NAME, $tableName, $tables[$tableName] );
 }
 
-$gBitInstaller->registerPackageInfo( TOPICA_PKG_NAME, array(
-	'description' => "A simple Liberty Service used to relay user registration date to Topica.com list manager.",
-	'license' => '<a href="http://www.gnu.org/licenses/licenses.html#LGPL">LGPL</a>',
-) );
-?>
+}
