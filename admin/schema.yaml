@@ -1,0 +1,30 @@
+---
+topica: 
+  homeable: false
+  required: false
+  tables: 
+    topica: |
+      
+      content_id I4 NOTNULL,
+      pump C(1) DEFAULT 'y',
+      first_name C(64),
+      last_name C(64),
+      phone_home C(20),
+      phone_cell C(20),
+      address C(64),
+      city C(64),
+      state C(64),
+      zipcode C(10)
+      CONSTRAINT ', CONSTRAINT `topica_ref` FOREIGN KEY (`content_id`) REFERENCES `liberty_content`( `content_id` )'
+      
+  version: 0.0.0
+  description: >
+    A simple Liberty Service used to relay
+    user registration date to Topica.com
+    list manager.
+  license: 
+    name: LGPL
+    description: >
+      Licensed under the GNU LESSER GENERAL
+      PUBLIC LICENSE.
+    url: http://www.gnu.org/copyleft/lesser.html
