@@ -33,7 +33,7 @@
 					  {formhelp note="Your list at Topica that you would like to push registration info into."}
 					{/forminput}
 					</div>
-		      <div class="row submit">
+		      <div class="buttonHolder row submit">
 			       <input type="submit" name="topicaAdminSubmit" value="{tr}Change Preferences{/tr}" />
 		      </div>
 			{/legend}
